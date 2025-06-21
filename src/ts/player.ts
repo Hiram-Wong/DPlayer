@@ -266,7 +266,7 @@ class DPlayer {
             this.bezel.switch(Icons.play);
         }
 
-        this.template.playButton.innerHTML = Icons.pause;
+        this.template.playIcon.innerHTML = Icons.pause;
         this.template.mobilePlayButton.innerHTML = Icons.pause;
 
         // if live, sync video in advance
@@ -311,7 +311,7 @@ class DPlayer {
             this.bezel.switch(Icons.pause);
         }
 
-        this.template.playButton.innerHTML = Icons.play;
+        this.template.playIcon.innerHTML = Icons.play;
         this.template.mobilePlayButton.innerHTML = Icons.play;
         if (!fromNative) {
             this.video.pause();
