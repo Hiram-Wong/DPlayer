@@ -45,7 +45,7 @@ declare class DPlayer {
     qualityIndex: number | null;
     switchingQuality: boolean;
     resizeObserver: ResizeObserver;
-    tran: (text: string) => string;
+    tran: (text: string, ...arg: Array<string | number>) => string;
     type: DPlayerType.VideoType | string;
     video: HTMLVideoElement;
     /**
@@ -92,13 +92,15 @@ declare class DPlayer {
      * Switch to a new video
      *
      * @param {Object} video - new video info
-     * @param {Object} danmaku - new danmaku info
+     * @param {Object | boolean} danmaku - new danmaku info
+     * @param {Boolean} remember - whether to remember the current video time and speed
      */
     switchVideo(video: {
         url: string;
         type?: DPlayerType.VideoType | string;
         pic?: string;
-    }, danmakuAPI?: DPlayerType.Danmaku): void;
+    }, danmakuAPI?: DPlayerType.Danmaku | boolean, remember?: boolean): void;
+    initDanmaku(danmakuAPI?: DPlayerType.Danmaku | boolean, apiBackend?: DPlayerType.APIBackend): void;
     initMSE(video: HTMLVideoElement, type: DPlayerType.VideoType | string): void;
     initVideo(video: HTMLVideoElement, type: DPlayerType.VideoType | string): void;
     switchQuality(index: number): void;
