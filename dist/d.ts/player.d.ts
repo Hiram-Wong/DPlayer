@@ -99,7 +99,7 @@ declare class DPlayer {
         url: string;
         type?: DPlayerType.VideoType | string;
         pic?: string;
-    }, danmakuAPI?: DPlayerType.Danmaku | boolean, remember?: boolean): void;
+    }, danmakuAPI?: DPlayerType.Danmaku | boolean, remember?: boolean, apiBackend?: DPlayerType.APIBackend): void;
     initDanmaku(danmakuAPI?: DPlayerType.Danmaku | boolean, apiBackend?: DPlayerType.APIBackend): void;
     initMSE(video: HTMLVideoElement, type: DPlayerType.VideoType | string): void;
     initVideo(video: HTMLVideoElement, type: DPlayerType.VideoType | string): void;
