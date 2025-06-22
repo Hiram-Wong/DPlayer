@@ -357,7 +357,7 @@ class DPlayer {
      * @param {Object | boolean} danmaku - new danmaku info
      * @param {Boolean} remember - whether to remember the current video time and speed
      */
-    switchVideo(video: { url: string; type?: DPlayerType.VideoType | string; pic?: string; }, danmakuAPI?: DPlayerType.Danmaku | boolean, remember: boolean = false): void {
+    switchVideo(video: { url: string; type?: DPlayerType.VideoType | string; pic?: string; }, danmakuAPI?: DPlayerType.Danmaku | boolean, remember = false): void {
         this.pause();
         const seek = this.video.currentTime;
         const speed = this.video.playbackRate;
