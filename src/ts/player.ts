@@ -527,9 +527,11 @@ class DPlayer {
 
                             // Listen for audio tracks updates
                             hls.on(window.Hls.Events.AUDIO_TRACKS_UPDATED, () => {
-                                if (hls.audioTracks.length > 1) {
+                                if (hls.audioTracks.length >= 2) {
                                     // Remove no-audio-switching class if multiple audio tracks are available
                                     this.container.classList.remove('dplayer-no-audio-switching');
+                                } else {
+                                    this.container.classList.add('dplayer-no-audio-switching');
                                 }
                             });
 
@@ -1004,7 +1006,7 @@ class DPlayer {
                     // switch secondary audio for HLS
                     } else if (window.Hls && this.plugins.hls && this.plugins.hls instanceof window.Hls) {
                         const hls = this.plugins.hls;
-                        if (hls.audioTracks.length > 1) {
+                        if (hls.audioTracks.length >= 2) {
                             hls.audioTrack = 1;  // Switch to secondary audio track
                         }
                     }
@@ -1012,7 +1014,7 @@ class DPlayer {
                     // switch primary audio for HLS
                     if (window.Hls && this.plugins.hls && this.plugins.hls instanceof window.Hls) {
                         const hls = this.plugins.hls;
-                        if (hls.audioTracks.length > 1) {
+                        if (hls.audioTracks.length >= 2) {
                             hls.audioTrack = 0;  // Switch to primary audio track
                         }
                     }
