@@ -373,7 +373,7 @@ class DPlayer {
      * Switch to a new video
      *
      * @param {Object} video - new video info
-     * @param {Object | boolean} danmaku - new danmaku info
+     * @param {Object | boolean} danmakuAPI - new danmaku info
      * @param {Boolean} remember - whether to remember the current video time and speed
      */
     switchVideo(
@@ -390,9 +390,11 @@ class DPlayer {
         this.initMSE(this.video, video.type || 'auto');
         if (danmakuAPI) {
             if (this.danmaku) {
-                if (!remember) this.bar.set('played', 0, 'width');
-                if (!remember) this.bar.set('loaded', 0, 'width');
-                if (!remember) this.template.ptime.textContent = '00:00';
+                if (!remember) {
+                    this.bar.set('played', 0, 'width');
+                    this.bar.set('loaded', 0, 'width');
+                    this.template.ptime.textContent = '00:00';
+                }
                 this.template.danmaku.innerHTML = '';
                 this.danmaku.options.apiBackend = apiBackend;
                 if (typeof danmakuAPI === 'object') {
@@ -412,7 +414,7 @@ class DPlayer {
             }
         }
 
-        if (remember) {
+         if (remember && !this.options.live) {
             if (seek !== 0) this.seek(seek);
             if (speed !== 1.0) this.speed(speed);
         }

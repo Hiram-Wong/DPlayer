@@ -96,7 +96,7 @@ declare class DPlayer {
      * Switch to a new video
      *
      * @param {Object} video - new video info
-     * @param {Object | boolean} danmaku - new danmaku info
+     * @param {Object | boolean} danmakuAPI - new danmaku info
      * @param {Boolean} remember - whether to remember the current video time and speed
      */
     switchVideo(video: {
