@@ -43,6 +43,21 @@
 ぜひ日本でももっと広まって欲しいと思っています（コメントを流さない場合でも軽量で優秀なプレイヤーだと思います）。  
 KonomiTV や TVRemotePlus 向けではありますが、できるだけ汎用的に改造しているつもりです。そのまま他の用途でも使えるかもしれません。
 
+### Installation
+
+今のところ npm には公開していませんが、その代わりに dist/ 以下を Git 管理に含め、リリース時に毎回ビルド済みファイルの更新とタグ付けを行っています。
+
+以下のように GitHub のリポジトリ名を package.json に記述すれば、本家 DPlayer の代わりとして利用できます。
+
+```json
+{
+    "name": "example-project",
+    "dependencies": {
+        "dplayer": "github:tsukumijima/DPlayer#v1.32.7"
+    }
+}
+```
+
 ---
 
 <p align="center">
