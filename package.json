@@ -1,6 +1,6 @@
 {
     "name": "dplayer",
-    "version": "1.32.6",
+    "version": "1.32.7",
     "description": "Wow, such a lovely HTML5 danmaku video player",
     "main": "dist/DPlayer.min.js",
     "types": "dist/d.ts/index.d.ts",
@@ -49,6 +49,7 @@
         "@types/bittorrent-protocol": "3.1.6",
         "@types/node": "^18",
         "@types/parse-torrent": "5.8.7",
+        "@types/w3c-screen-orientation": "^1.0.6",
         "@types/webtorrent": "0.109.8",
         "@typescript-eslint/eslint-plugin": "^5.62.0",
         "@typescript-eslint/parser": "^5.62.0",
